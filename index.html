@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работяги</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div id="information">
+        <h1>Работяги</h1>
+        <div class="head">
+          <div class="text-firstName">Имя</div>
+          <div class="text-lastName">Фамилия</div>
+          <div class="text-surName">Отчество</div>
+          <div class="text-age">Возраст</div>
+          <div class="text-job">Должность</div>
+          <div class="text-work">Организация</div>
+          <div class="btnGroup"></div>
+      </div>
+        <form>
+           
+        </form>
+    </div>
+
+    <div id="all-info">
+        <h2>Подробная информация</h2>
+        <form>
+           
+        </form>
+    </div>
+
+    <div id="create-worker">
+        <h2>Создание работяги</h2>
+        <form>
+            <div class="radio-btn">
+                <div><input type="radio" id="radioJoin" name="radio" value="JoinJob" class="radio">Принять</div>
+                <div></div><input type="radio" id="radioLeave" name="radio" value="LeaveJob" class="radio">Уволить</div>
+  
+            <div class="input">
+              <input type="text" id="firstName" class="form__field" name="firstName" required>
+              <label for="firstName" class="form__label">Имя</label>
+            </div>
+            <div class="input">
+              <input type="text" id="lastName" class="form__field" name="lastName" required>
+              <label for="lastName" class="form__label">Фамилия</label>
+            </div>
+            <div class="input">
+              <input type="text" id="surName" class="form__field" name="surName" required>
+              <label for="surName" class="form__label">Отчество</label>
+            </div>
+            <div class="input">
+              <input type="number" id="age" class="form__field" name="age" required>
+              <label for="age" class="form__label">Возраст</label>
+            </div>
+            <div class="input">
+              <input type="text" id="job" class="form__field" name="job" required>
+              <label for="job" class="form__label">Должность</label>
+            </div>
+            <div class="input">
+              <input type="text" id="work" class="form__field" name="work" required>
+              <label for="work" class="form__label">Организация</label>
+            </div>
+            <div class="input joinJob">
+              <input type="date" id="joinJob" class="form__field" name="joinJob" required>
+              <label for="joinJob" class="form__label">Дата принятия</label>
+            </div>
+            <div class="input salary">
+              <input type="number" id="salary" class="form__field" name="salary" required>
+              <label for="salary" class="form__label">Зарплата</label>
+            </div>
+            <div class="input leaveJob">
+              <input type="date" id="leaveJob" class="form__field" name="leaveJob" required>
+              <label for="leaveJob" class="form__label">Дата увольнения</label>
+            </div>
+            <div class="input jobRange">
+              <input type="number" id="jobRange" class="form__field" name="jobRange" required>
+              <label for="jobRange" class="form__label">Стаж</label>
+            </div>
+            <input type="button" id="createWorker" class="buttons" value="Добавить работягу">
+            <input type="button" id="mainMenu" class="buttons" value="Главная страница">
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

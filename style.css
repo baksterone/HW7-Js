@@ -1,0 +1,51 @@
+#information .head{
+    display: flex;
+}
+
+.text_description{
+    display: flex;
+}
+
+.head div{
+    border: 1px solid black;
+    width: 20%;
+    text-align: center;
+}
+
+#all-info form{
+    display: flex;
+}
+
+.info div{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.text-details{
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.text-details > div{
+    width: 20%;
+    border: 1px solid black;
+}
+
+.edit, .remove{
+    cursor: pointer;
+}
+
+.all-details{
+    width: 100%;
+    text-align: center;
+}
+
+.all-details > div {
+    width: 20%;
+    border: 1px solid black;
+}
+
+#mainMenu2{
+    height: 35px;
+}
