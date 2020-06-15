@@ -23,12 +23,13 @@ class Worker{
     }
 
     get information(){
-        return  this.firstName = firstName,
-                this.lastName = lastName,
-                this.surName = surName,
-                this.age = age,
-                this.job = job,
-                this.work = work;
+        return  `
+        <div class="firstName"> ${arrWorker[i].firstName} </div>
+        <div class="lastName"> ${arrWorker[i].lastName} </div>
+        <div class="surName"> ${arrWorker[i].surName} </div>
+        <div class="age"> ${arrWorker[i].age} </div>
+        <div class="job"> ${arrWorker[i].job} </div>
+        <div class="work"> ${arrWorker[i].work} </div>`
     }
 }
 
@@ -78,7 +79,7 @@ function editWorker(i){
 function printDefaultInfo(i, arrWorker){
     let form = document.getElementById('all-info').getElementsByTagName('form');
 
-    if(arrWorker[i] instanceof JoinJob){
+    if(arrWorker[i].type == 'joinJob'){
         form[0].innerHTML = `<div class="deatailedInfo">
         <div class="details">
           <div class="firstName"> Имя </div>
@@ -91,7 +92,7 @@ function printDefaultInfo(i, arrWorker){
           <div class="salary"> Зарплата </div>
         </div>
         </div>`;
-        for(let i = 0; i < arrWorker.length; i++){
+       
           
           form[0].innerHTML += `
           <div class="all-details" id="details${i}">
@@ -105,9 +106,9 @@ function printDefaultInfo(i, arrWorker){
           <div class="salary"> ${arrWorker[i].salary} </div>
          </div>
           `
-      };
+      
           form[0].innerHTML+= `<input type="button" class="buttons" id="mainMenu2" value="Главное меню">`;
-    } else {
+    } else if(arrWorker[i].type == 'leaveJob') {
       form[0].innerHTML = `<div class="deatailedInfo">
         <div class="details">
         <div class="firstName"> Имя </div>
@@ -120,7 +121,7 @@ function printDefaultInfo(i, arrWorker){
         <div class="jobRange"> Стаж </div>
         </div>
         </div>`;
-        for(let i = 0; i < arrWorker.length; i++){
+        
           
             form[0].innerHTML += `
             <div class="all-details" id="details${i}">
@@ -134,7 +135,7 @@ function printDefaultInfo(i, arrWorker){
             <div class="jobRange"> ${arrWorker[i].jobRange} </div>
            </div>
             `
-        };
+        
         form[0].innerHTML+= `<input type="button" class="buttons" id="mainMenu2" value="Главное меню">`;
   }
       document.getElementById('mainMenu2').addEventListener('click', () =>{
@@ -274,22 +275,26 @@ for (let i of radio){
   
     switch(type){
         case 'JoinJob':
+            if(firstName.trim() == '' || lastName.trim() == '' || surName.trim() == '' || age.trim() == ''
+            || job.trim() == '' || work.trim() == '' || joinJob.trim() == '' || salary.trim() == ''){
+                alert('Заполните все поля');
+            } else {
           arrWorker[arrWorker.length] = new JoinJob(firstName, lastName, surName, age, job, work, joinJob, salary);
             printInfo(arrWorker);
             display('information');
             alert('Приняли работягу');
+        };
         break;
         case 'LeaveJob':
+            if(firstName.trim() == '' || lastName.trim() == '' || surName.trim() == '' || age.trim() == ''
+            || job.trim() == '' || work.trim() == '' || leaveJob.trim() == '' || jobRange.trim() == ''){
+                alert('Заполните все поля');
+            } else {
           arrWorker[arrWorker.length] = new LeaveJob(firstName, lastName, surName, age, job, work, leaveJob, jobRange);
             printInfo(arrWorker);
             display('information');
             alert('Уволили работягу');
-        break;
-        default:
-          arrWorker[arrWorker.length] = new JoinJob(firstName, lastName, surName, age, job, work, joinJob, salary);
-            printInfo(arrWorker);
-            display('information');
-            alert('Приняли работягу');
+            };
         break;
     }
   })
